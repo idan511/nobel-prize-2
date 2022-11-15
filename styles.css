@@ -1,0 +1,158 @@
+:root {
+  --font-family: "SF Pro Text",
+    "SF Pro Icons",
+    "Helvetica Neue",
+    "Helvetica",
+    "Arial",
+    sans-serif;
+  --deep-blue: rgb(49, 11, 218);
+  --deep-red: rgb(239, 6, 72);
+  --white: #fbfafa;
+  --charcoal: rgb(45, 43, 43);
+  --layout-guide-item: rgba(255, 89, 0, 0.975);
+  --layout-guide-content: rgb(0, 183, 255);
+}
+
+/* start design helpers */
+
+.item {
+  border: 1px dotted var(--layout-guide-item);
+}
+
+.content {
+  border: 1px dotted var(--layout-guide-content);
+}
+
+.card-content {
+  border: 1px solid var(--layout-guide-content);
+}
+
+/* end design helpers */
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-basis: 100%;
+}
+
+.content {
+  flex-grow: 0;
+  flex-basis: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+/* adjustments for medium screens, like some tablets or landscape on a mobile */
+@media (min-width: 576px) {}
+
+/* adjustments for medium-large screens, like some tablets */
+@media (min-width: 768px) {
+
+  .item.navbar-logo,
+  .item.navbar-menu {
+    flex-basis: 50%;
+  }
+}
+
+/* adjustments for large screens, like laptops and desktops */
+@media (min-width: 992px) {
+  .container {
+    width: 992px;
+    margin: 0 auto;
+  }
+
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  color: var(--charcoal);
+}
+
+a {
+  color: var(--deep-blue);
+}
+
+input,
+textarea,
+button,
+select {
+  display: block;
+  height: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0.25rem;
+  border: 1px solid var(--charcoal);
+}
+
+textarea {
+  height: 4rem;
+}
+
+button {
+  height: 2.5rem;
+}
+
+form>* {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+#navbar {
+  display: flex;
+  background-color: var(--deep-blue);
+  color: var(--white);
+  border-bottom: 4px solid var(--deep-red);
+}
+
+#navbar a {
+  color: var(--white);
+}
+
+.navbar-items {
+  justify-content: space-between;
+}
+
+.navbar-menu ul {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  list-style-type: none;
+}
+
+.navbar-menu li {
+  margin: 0 0.5rem;
+}
+
+.navbar-logo {
+  display: flex;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.navbar-logo a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+#footer {
+  display: flex;
+  margin-top: auto;
+  background-color: var(--deep-blue);
+  color: var(--white);
+  height: 200px;
+  border-top: 4px solid var(--deep-red);
+}
