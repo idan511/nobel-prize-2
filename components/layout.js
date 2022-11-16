@@ -1,5 +1,4 @@
 import Footer from "./footer";
-import Navbar from "./navbar";
 import Link from "next/link";
 
 // This is our base page layout - See it is used in pages_app.js
