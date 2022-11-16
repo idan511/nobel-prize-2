@@ -8,6 +8,8 @@ import { get_laureates_name } from "../components/card";
 import Image from "next/image";
 import { SearchBar } from "../components/search_bar";
 
+import x_img from '../public/x.svg'
+
 // Our main page. Here we are loading data "on the client"
 // And showing some loading screen(s) while waiting for the data to be ready
 export function Winners({ data, isLoading, isError, set_more_url, set_more_data_toggle }) {
@@ -82,7 +84,7 @@ export default function IndexPage() {
       </div>
       <div id="more_data" style={{ transform: `translateY(${more_data_toggle ? "0" : "-100"}vh)` }} onClick={() => { set_more_data_toggle(false) }}>
         <MoreData data={more_data} />
-        <Image id="exit_data" src="/x.svg" alt="exit" width="100" height="100" />
+        <Image id="exit_data" src={x_img} alt="exit" />
       </div>
     </>
   )
