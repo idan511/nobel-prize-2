@@ -10,6 +10,8 @@ import { useState } from "react";
 // ii) a function to create a new state
 // Pay attention to how both of these are used, as this is a simple example of
 // The primary way of managing data/state in React
+
+
 export default function ContactPage() {
 
   const [formData, setFormData] = useState({});
@@ -38,15 +40,18 @@ export default function ContactPage() {
   return (
     <div className="row">
       <div className="item">
+
         <div className="content">
-          Contact us if you found any mistakes or missing data, or if you just want to say hello!
-        </div>
-        <div className="content">
-          <form onSubmit={handleSubmit}>
-            <input id="form-name" placeholder="Your name" value={formData.name} onChange={handleChange} required />
-            <input id="form-email" type="email" placeholder="Your email" value={formData.email} onChange={handleChange} required />
-            <textarea id="form-comment" placeholder="Your comment" value={formData.comment} onChange={handleChange}></textarea>
-            <button type="submit">Send</button>
+          <form onSubmit={handleSubmit} className="contact_form">
+            <div className="content">
+              Contact us if you found any mistakes or missing data, or if you just want to say hello!
+            </div>
+            <div className="form_meta">
+              <input id="form-name" placeholder="Your name" value={formData.name} onChange={handleChange} required />
+              <input id="form-email" type="email" placeholder="Your email" value={formData.email} onChange={handleChange} required />
+            </div>
+            <textarea id="form-comment" placeholder="Your comment" value={formData.comment} onChange={handleChange}></textarea><br />
+            <div className="form_futton_holder"><button type="submit">Send</button></div>
           </form>
         </div>
       </div>
