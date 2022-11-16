@@ -50,7 +50,7 @@ export default function ContactPage() {
               <input id="form-name" placeholder="Your name" value={formData.name} onChange={handleChange} required />
               <input id="form-email" type="email" placeholder="Your email" value={formData.email} onChange={handleChange} required />
             </div>
-            <textarea id="form-comment" placeholder="Your comment" value={formData.comment} onChange={handleChange}></textarea><br />
+            <textarea id="form-comment" placeholder="Your comment" value={formData.comment} onChange={handleChange}></textarea>
             <div className="form_futton_holder"><button type="submit">Send</button></div>
           </form>
         </div>

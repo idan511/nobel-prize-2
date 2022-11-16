@@ -6,13 +6,13 @@ import Link from "next/link";
 export default function Layout({ children }) {
   return (
     <div id="container">
-    <div id="main">
-    <h1><Link href="/">Nobel Prizes</Link></h1>
-      <main className="container">
-        {children}
-      </main>
-      <Footer />
-    </div>
+      <div id="main">
+        <h1><Link href="/">Nobel Prizes 2</Link></h1>
+        <main className="container">
+          {children}
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }
