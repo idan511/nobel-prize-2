@@ -26,8 +26,6 @@ export function Winners({ data, isLoading, isError, set_more_url, set_more_data_
 
   const records = data.nobelPrizes;
 
-  console.log(records)
-
   return (
     <>
 
