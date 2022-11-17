@@ -49,7 +49,7 @@ export function MoreData({ data }) {
     <div className="item" id="more_content">
       <div className="more_data">
         <h2>{data[0].categoryFullName.en}</h2>
-        <h3>{data[0].dateAwarded ? data[0].dateAwarded : data[0].awardYear }</h3>
+        <h3>{data[0].dateAwarded ? data[0].dateAwarded : data[0].awardYear}</h3>
         <hr />
         <h4>Laureates</h4>
         {list.map(x => { return (<li key={JSON.stringify(x)}>{get_laureates_name(x)}</li>) })}
