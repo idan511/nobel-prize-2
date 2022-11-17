@@ -13,8 +13,6 @@ export function useApiMoreData() {
   const [url, setURL] = useState("https://api.nobelprize.org/2/nobelPrize/phy/2022");
 
   const { data, error } = useSWR(url, fetcher2)
-
-  console.log(data)
   
   return {
     more_data: data, ismdError: error, setURL
