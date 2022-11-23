@@ -11,15 +11,30 @@ import { useState } from "react";
 // Pay attention to how both of these are used, as this is a simple example of
 // The primary way of managing data/state in React
 
+import { CONTACT_FORM_ENDPOINT } from "../config";
+
+async function postContactForm(data) {
+  console.log(data);
+  const response = await fetch(CONTACT_FORM_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  console.log(response);
+  return response;
+}
 
 export default function ContactPage() {
 
   const [formData, setFormData] = useState({});
+  const [formResponseStatus, setFormResponseStatus] = useState();
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    console.log(formData);
-    alert("Not yet handling form submission");
+    const response = await postContactForm(formData);
+    setFormResponseStatus(response.status);
   }
 
   function handleChange(event) {
@@ -42,6 +57,8 @@ export default function ContactPage() {
       <div className="item">
 
         <div className="content">
+        {formResponseStatus ?
+             <div>{formResponseStatus === 200 ? "Thank you." : "Something went wrong."}</div> :
           <form onSubmit={handleSubmit} className="contact_form">
             <div className="content">
               Contact us if you found any mistakes or missing data, or if you just want to say hello!
@@ -52,7 +69,7 @@ export default function ContactPage() {
             </div>
             <textarea id="form-comment" placeholder="Your comment" value={formData.comment} onChange={handleChange}></textarea>
             <div className="form_futton_holder"><button type="submit">Send</button></div>
-          </form>
+          </form>}
         </div>
       </div>
     </div >
