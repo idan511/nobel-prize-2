@@ -10,7 +10,7 @@ import { SearchBar } from "../components/search_bar";
 
 import x_img from '../public/x.svg'
 
-// Our main page. Here we are loading data "on the client"
+// Our main page. Here we are loading data "on the client"SDFSDF
 // And showing some loading screen(s) while waiting for the data to be ready
 export function Winners({ data, isLoading, isError, set_more_url, set_more_data_toggle }) {
 
